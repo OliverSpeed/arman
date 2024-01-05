@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailwind Blog Template</title>
+    <title>Welcome</title>
     <meta name="author" content="David Grzyb">
     <meta name="description" content="">
 
@@ -36,15 +36,21 @@
             </nav>
 
             <div class="flex items-center text-lg no-underline text-white pr-6">
-                <a class="" href="#">
+				@if(setting('facebook') !== '')
+                <a class="pl-6" href="https://facebook.com/{{ setting('facebook') }}" target="_blank">
                     <i class="fab fa-facebook"></i>
                 </a>
-                <a class="pl-6" href="#">
+				@endif
+				@if(setting('instagram') !== '')
+                <a class="pl-6" href="https://instagram.com/{{ setting('instagram') }}" target="_blank">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a class="pl-6" href="#">
+				@endif
+				@if(setting('twitter') !== '')
+                <a class="pl-6" href="https://twitter.com/{{ setting('twitter') }}" target="_blank">
                     <i class="fab fa-twitter"></i>
                 </a>
+				@endif
             </div>
         </div>
 
