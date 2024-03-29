@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\InstagramController;
+use App\Http\Controllers\AboutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +16,4 @@ use App\Http\Controllers\InstagramController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
-Route::get('/instagram', [InstagramController::class, 'index']);
-Route::get('/instagram-get-auth', [InstagramController::class, 'show']);
-Route::get('/instagram-auth-response', [InstagramController::class, 'complete']);
+Route::get('/about', [AboutController::class, 'index'])->name('about.us');

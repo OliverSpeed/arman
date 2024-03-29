@@ -1,46 +1,35 @@
 <x-layouts.app>
 @push('title', 'Meistä')
 @section('content')
-    <div class="container mx-auto flex flex-wrap py-6">
-
+ <div class="container mx-auto flex flex-wrap py-6">
         <!-- Posts Section -->
         <section class="w-full md:w-2/3 flex flex-col items-center px-3">
-		@foreach($blog as $post)
+		
             <article class="flex flex-col shadow my-4">
                 <!-- Article Image -->
                 <a href="#" class="hover:opacity-75">
-                    <img src="{{ $post->image }}">
+                    <img src="->image }}">
                 </a>
                 <div class="bg-white flex flex-col justify-start p-6">
-                    <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">{{ $post->title }}</a>
+                    <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">->title }}</a>
                     <p href="#" class="text-sm pb-3">
-                        Julkaissut <a href="#" class="font-semibold hover:text-gray-800">{{ $post->user->name }}</a>, {{ $post->created_at->locale('fi')->diffForHumans() }}
+                        Julkaissut <a href="#" class="font-semibold hover:text-gray-800">Jasper Kontturi</a>, {{ $post->created_at->diffForHumans() }}
                     </p>
-                    <a href="#" class="pb-6">{{ $post->story }}</a>
+                    <a href="#" class="pb-6">->story }}</a>
                     <a href="#" class="uppercase text-gray-800 hover:text-black">Jatka lukemista <i class="fas fa-arrow-right"></i></a>
                 </div>
             </article>
-		@endforeach
 			
-        <!-- Täbit -->
-		<div class="flex items-center py-8">
-			@if ($blog->previousPageUrl())
-				<a href="{{ $blog->previousPageUrl() }}" class="h-10 w-10 font-semibold text-gray-800 hover:text-gray-900 text-sm flex items-center justify-center ml-3"><i class="fas fa-arrow-left"></i></a>
-			@endif
-			
-			@foreach ($blog->getUrlRange(1, $blog->lastPage()) as $page => $url)
-				<a href="{{ $url }}" class="h-10 w-10 {{ $page == $blog->currentPage() ? 'bg-blue-800 text-white' : 'text-gray-800 hover:bg-blue-600 hover:text-white' }} font-semibold text-sm flex items-center justify-center">{{ $page }}</a>
-			@endforeach
-			
-			@if ($blog->nextPageUrl())
-				<a href="{{ $blog->nextPageUrl() }}" class="h-10 w-10 font-semibold text-gray-800 hover:text-gray-900 text-sm flex items-center justify-center ml-3"><i class="fas fa-arrow-right"></i></a>
-			@endif
-		</div>
-
+            <!-- Pagination -->
+            <div class="flex items-center py-8">
+                <a href="#" class="h-10 w-10 bg-blue-800 hover:bg-blue-600 font-semibold text-white text-sm flex items-center justify-center">1</a>
+                <a href="#" class="h-10 w-10 font-semibold text-gray-800 hover:bg-blue-600 hover:text-white text-sm flex items-center justify-center">2</a>
+                <a href="#" class="h-10 w-10 font-semibold text-gray-800 hover:text-gray-900 text-sm flex items-center justify-center ml-3">Next <i class="fas fa-arrow-right ml-2"></i></a>
+            </div>
 
         </section>
 
-        <!-- Sivu-osio -->
+        <!-- Sidebar Section -->
         <aside class="w-full md:w-1/3 flex flex-col items-center px-3">
             <div class="w-full bg-white shadow flex flex-col my-4 p-6">
                 <p class="text-xl font-semibold pb-5">Instagram</p>
