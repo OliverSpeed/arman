@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,10 @@ use App\Http\Controllers\AboutController;
 
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
 Route::get('/about', [AboutController::class, 'index'])->name('about.us');
+
+Route::middleware('admin')->group(function () {
+    Route::prefix('admin')->controller(AdminController::class)->group(function () {
+        Route::get('/', 'index')->name('admin.dashboard');
+        Route::post('/blog', 'blogView')->name('blog.index');
+    });
+});

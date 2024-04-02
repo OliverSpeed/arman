@@ -10,9 +10,8 @@
                 <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Galleria</a>
                 <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Ota yhteyttä</a>
                 <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Verkkokauppa</a>
-				@auth <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2"><font color="red">Hallinta</font></a> @endauth
-                <a href="{{ route('register') }}" class="hover:bg-gray-400 rounded py-2 px-4 mx-2"><font color="green">Register</font></a>
-                <a href="{{ route('login') }}" class="hover:bg-gray-400 rounded py-2 px-4 mx-2"><font color="green">Login</font></a>
+				@auth <a href="{{ route('admin.dashboard') }}" class="hover:bg-gray-400 rounded py-2 px-4 mx-2"><font color="red">Hallinta</font></a> @endauth
+                @guest <a href="{{ route('login') }}" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Kirjaudu</a> @endguest
             </div>
         </div>
     </nav>
