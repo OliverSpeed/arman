@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,11 +18,16 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
-Route::get('/about', [AboutController::class, 'index'])->name('about.us');
+Route::get('/about', [AboutController::class, 'index'])->name('about.index');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+Route::post('/contact/create', [ContactController::class, 'create'])->name('contact.create.ticket');
 
 Route::middleware('admin')->group(function () {
     Route::prefix('admin')->controller(AdminController::class)->group(function () {
         Route::get('/', 'index')->name('admin.dashboard');
+        Route::get('/tickets', 'tickets')->name('admin.tickets');
+        Route::get('/ticket/view/{id}', 'viewTicket')->name('admin.ticket.view');
+        Route::post('/ticket/update/{id}', 'updateTicket')->name('admin.ticket.update');
         Route::post('/blog', 'blogView')->name('blog.index');
     });
 });
