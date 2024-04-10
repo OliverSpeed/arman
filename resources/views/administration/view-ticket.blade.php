@@ -30,7 +30,7 @@
                     <div>
                         <label for="status" class="block text-sm font-medium text-white-700">Tilanne</label>
                         <select id="status" name="status" class="mt-2 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md text-black">
-                            <option value="open"@if($ticket->status === "open") selected @endif >Vastaamaton</option>
+                            <option value="open"@if($ticket->status === "open") selected @endif>Vastaamaton</option>
                             <option value="closed" @if($ticket->status === "closed") selected @endif>Vastattu</option>
                         </select>
                     </div>
