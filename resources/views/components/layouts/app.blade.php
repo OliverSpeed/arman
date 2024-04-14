@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tietoja meistä</title>
+    <title>@yield('title')</title>
     <meta name="author" content="David Grzyb">
     <meta name="description" content="">
 

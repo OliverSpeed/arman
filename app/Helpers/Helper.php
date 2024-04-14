@@ -18,6 +18,17 @@ if (! function_exists('setting')) {
     }
 }
 
+if (! function_exists('strLimit')) {
+    function strLimit(string $string, int $limit, string $replacement = '...'): string
+    {
+        $stringWithoutTags = strip_tags($string);
+        $limitedString = Str::limit($stringWithoutTags, $limit, $replacement);
+
+        return $limitedString;
+    }
+}
+
+
 if (! function_exists('karuselli')) {
     function karuselli(): array
     {

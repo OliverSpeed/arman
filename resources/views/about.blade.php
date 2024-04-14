@@ -1,5 +1,5 @@
 <x-layouts.app>
-@push('title', 'Meistä')
+@section('title')Tietoja meistä @endsection
 @section('content')
     <div class="container mx-auto flex flex-wrap py-6">
 

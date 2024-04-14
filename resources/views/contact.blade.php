@@ -1,5 +1,5 @@
 <x-layouts.app>
-    @push('title', 'Ota yhteyttä')
+    @section('title')Ota yhteyttä @endsection
     @section('content')
     <div class="my-6">
         <div
@@ -29,18 +29,7 @@
                     </ul>
                 </div>
                 <div class="mt-12">
-                    @if(setting('facebook') !== '')
-                    <a class="pl-6" href="https://facebook.com/{{ setting('facebook') }}" target="_blank">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    @endif
-
-                    @if(setting('twitter') !== '')
-                    <a class="pl-6" href="https://twitter.com/{{ setting('twitter') }}" target="_blank">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    @endif
-                    <h2 class="text-lg font-extrabold">Sosiaaliset mediat</h2>
+                    <h2 class="text-lg font-extrabold">Sosiaaliset mediamme</h2>
                     <ul class="flex mt-3 space-x-4">
                         @if(setting('facebook') !== '')
                         <li class="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center">

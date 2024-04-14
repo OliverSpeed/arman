@@ -7,6 +7,9 @@
                 <form action="{{ route('admin.gallery.upload') }}" method="POST" enctype="multipart/form-data"
                     class="space-y-4">
                     @csrf
+                    @if (session()->has('success'))
+                        <span class="text-sm text-green-600">Kiitos! {{ session()->get('success') }}</span>
+                    @endif
                     <div class="mb-4">
                         <label for="photo" class="block text-sm font-medium text-gray-700">Valitse kuva</label>
                         <input type="file" id="photo" name="photo" class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-black">

@@ -22,6 +22,7 @@ Route::get('/', [HomeController::class, 'index'])->name('welcome');
 Route::get('/about', [AboutController::class, 'index'])->name('about.index');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
+Route::get('/blog/{post:slug}', [HomeController::class, 'viewPost'])->name('blog.view');
 Route::post('/contact/create', [ContactController::class, 'create'])->name('contact.create.ticket');
 
 Route::middleware('admin')->group(function () {
@@ -30,8 +31,11 @@ Route::middleware('admin')->group(function () {
         Route::get('/tickets', 'tickets')->name('admin.tickets');
         Route::get('/ticket/view/{id}', 'viewTicket')->name('admin.ticket.view');
         Route::post('/ticket/update/{id}', 'updateTicket')->name('admin.ticket.update');
-        Route::post('/blog', 'blogView')->name('admin.blog.index');
+        Route::get('/blog', 'blog')->name('admin.blog.index');
+        Route::post('/blog', 'newBlogPost')->name('admin.blog.save');
         Route::get('/upload', 'galleryIndex')->name('admin.gallery.index');
         Route::post('/upload', 'newPhoto')->name('admin.gallery.upload');
+        Route::get('/settings', 'settings')->name('admin.settings.index');
+        Route::post('/settings', 'saveSettings')->name('admin.settings.save');
     });
 });

@@ -1,5 +1,5 @@
 <x-layouts.app>
-    @push('title', 'Ota yhteyttä')
+  @section('title')Galleria @endsection
     @section('content')
 
     <!---
