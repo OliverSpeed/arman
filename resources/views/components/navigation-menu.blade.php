@@ -9,6 +9,7 @@
                 <a href="{{ route('welcome') }}" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Etusivu</a>
                 <a href="{{ route('gallery.index') }}" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Galleria</a>
                 <a href="{{ route('contact.index') }}" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Ota yhteyttä</a>
+                <a href="{{ route('about.index') }}" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Meistä</a>
                 <a href="{{ setting('verkkokauppa') }}" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Verkkokauppa</a>
 				@auth @if(Auth::user()->admin === 1) <a href="{{ route('admin.dashboard') }}" class="hover:bg-gray-400 rounded py-2 px-4 mx-2"><font color="red">Hallinta</font></a> @endif @endauth
                 @guest <a href="{{ route('login') }}" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Kirjaudu</a> @endguest
