@@ -1,5 +1,5 @@
 <head>
-    <title>Hallintapaneeli</title>
+    <title>{{ setting('name') }} - Hallintapaneeli</title>
     @vite('resources/css/app.css')
 </head>
 <style>
@@ -177,7 +177,9 @@
                         <div class="block w-px h-6 mx-3 bg-gray-400 dark:bg-gray-700"></div>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center mr-4 hover:text-blue-100">
+
+                        <a ref="{{ route('logout') }}" target="_blank" onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();" class="flex items-center mr-4 hover:text-blue-100">
                             <span class="inline-flex mr-1">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -188,6 +190,9 @@
                             </span>
                             Kirjaudu ulos
                         </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                            @csrf
+                        </form>
                     </li>
                 </ul>
             </div>

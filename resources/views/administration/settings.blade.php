@@ -18,6 +18,13 @@
                     @enderror
                     </div>
                     <div class="mb-4">
+                        <label for="title" class="block text-sm font-medium text-gray-700">Sivuston nimi</label>
+                        <input type="text" id="motto" name="name" value="{{ setting('name') }}" class="@error('name') bg-red-50 border-red-500 @enderror mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-black">
+                    @error('name')
+                        <span class="text-sm text-red-600">Hups! {{ $message }}</span>
+                    @enderror
+                    </div>
+                    <div class="mb-4">
                         <label for="title" class="block text-sm font-medium text-gray-700">Twitter</label>
                         <input type="text" id="twitter" name="twitter" value="{{ setting('twitter') }}" class="@error('twitter') bg-red-50 border-red-500 @enderror mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-black">
                     @error('twitter')

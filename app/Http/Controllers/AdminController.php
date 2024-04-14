@@ -164,11 +164,13 @@ class AdminController extends Controller
 			'twitter' => 'nullable|string|max:99',
 			'instagram' => 'nullable|string|max:99',
 			'email' => 'sometimes|email|max:255',
-			'verkkokauppa' => 'required|string|max:124'
+			'verkkokauppa' => 'required|string|max:124',
+			'name' => 'required|string|max:99',
 		]);
 	
 		$keys = [
 			'motto' => $request->input('motto'),
+			'name' => $request->input('name'),
 			'facebook' => $request->input('facebook'),
 			'twitter' => $request->input('twitter'),
 			'instagram' => $request->input('instagram'),

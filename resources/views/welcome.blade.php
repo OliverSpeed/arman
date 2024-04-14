@@ -7,8 +7,8 @@
             @foreach($blog as $post)
             <article class="flex flex-col shadow my-4">
                 <a href="{{ route('blog.view', $post->slug) }}" class="hover:opacity-75">
-                    <img src="/uploads/blog/{{ $post->image }}" style="object-fit: fill; width: 100%; height: 500px;"
-                        alt="{{ $post->title }}">
+                <img src="/uploads/blog/{{ $post->image }}" style="object-fit: cover; width: 100%; max-height: 500px;"
+            alt="{{ $post->title }}">
                 </a>
                 <div class="bg-white flex flex-col justify-start p-6">
                     <a href="{{ route('blog.view', $post->slug) }}"

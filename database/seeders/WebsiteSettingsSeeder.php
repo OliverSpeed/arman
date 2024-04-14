@@ -25,10 +25,25 @@ class WebsiteSettingsSeeder extends Seeder
                 'value' => '',
                 'comment' => 'Facebook linkki verkkosivuilla, esimerkiksi facebook.',
             ],
-            [
-                'key' => 'contact_enabled',
-                'value' => '1',
-                'comment' => 'Voiko yhteyttä ottaa? Hätätapauksissa poista käytöstä. :-)',
+			            [
+                'key' => 'motto',
+                'value' => 'Tyhjä motto ig',
+                'comment' => 'Näkyy logon alapuolella.',
+            ],
+			[
+                'key' => 'verkkokauppa',
+                'value' => 'https://google.com',
+                'comment' => 'Verkkokaupan linkki',
+            ],
+			[
+                'key' => 'email',
+                'value' => 'example@gmail.com',
+                'comment' => 'Yrityksen sähköpostiosoite',
+            ],
+			[
+                'key' => 'name',
+                'value' => 'Nimi',
+                'comment' => 'Sivuston nimi.',
             ],
         ];
 
